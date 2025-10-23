@@ -430,7 +430,7 @@ function SubmitModal({ onClose, onSuccess }) {
     
     const isQuarantine = company && company.is_outside_us;
     
-    return { firstLine: firstLine.join(' â€¢ '), testLine, isQuarantine };
+    return { firstLine: firstLine.join(' • '), testLine, isQuarantine };
   };
 
   const submitBatch = async () => {
@@ -484,7 +484,7 @@ function SubmitModal({ onClose, onSuccess }) {
         <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
           <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
             <h2 className="text-xl font-bold">Submit Soil Samples</h2>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">âœ•</button>
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">X</button>
           </div>
 
           <div className="p-6 space-y-6">
@@ -588,7 +588,7 @@ function SubmitModal({ onClose, onSuccess }) {
                             >
                               Remove
                             </button>
-                            <span className="text-gray-400">â†’</span>
+                            <span className="text-gray-400">x</span>
                           </div>
                         </div>
                       </div>
@@ -772,7 +772,7 @@ function SampleDetailModal({ sample, sampleIndex, fields, selectedFarm, onSave, 
         <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
           <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
             <h2 className="text-xl font-bold">Sample {sampleIndex + 1} Details</h2>
-            <button onClick={onCancel} className="text-gray-500 hover:text-gray-700">âœ•</button>
+            <button onClick={onCancel} className="text-gray-500 hover:text-gray-700">X</button>
           </div>
 
           <div className="p-6 space-y-6">
@@ -878,7 +878,7 @@ function SampleDetailModal({ sample, sampleIndex, fields, selectedFarm, onSave, 
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Yield Goal (bu/ac)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Yield Goal (unit/ac)</label>
                   <input
                     type="number"
                     value={editedSample.yield_goal}
@@ -905,7 +905,7 @@ function SampleDetailModal({ sample, sampleIndex, fields, selectedFarm, onSave, 
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Previous Crop Yield (bu/ac)</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Previous Crop Yield (unit/ac)</label>
                   <input
                     type="number"
                     value={editedSample.previous_crop_yield}
@@ -963,7 +963,7 @@ function SampleDetailModal({ sample, sampleIndex, fields, selectedFarm, onSave, 
               
               <div className="bg-gray-50 p-4 rounded-lg mb-4">
                 <p className="text-sm text-gray-600">
-                  âœ“ Standard tests included: B, Ca, Cu, Fe, K, Mg, Mn, Na, OM, P2, pH, S, Zn
+                  ✓“ Standard tests included: B, Ca, Cu, Fe, K, Mg, Mn, Na, OM, P2, pH, S, Zn
                 </p>
               </div>
 
@@ -1061,7 +1061,7 @@ function LimeHistoryModal({ onSave, onCancel }) {
       <div className="bg-white rounded-lg max-w-md w-full">
         <div className="border-b px-6 py-4 flex justify-between items-center">
           <h3 className="text-lg font-bold">Add Lime Application</h3>
-          <button onClick={onCancel} className="text-gray-500 hover:text-gray-700">âœ•</button>
+          <button onClick={onCancel} className="text-gray-500 hover:text-gray-700">X</button>
         </div>
 
         <div className="p-6 space-y-4">
@@ -1241,7 +1241,7 @@ function BatchDetailsModal({ batchId, onClose, onDelete, onGenerateCSV, onDownlo
                     {sample.crop && (
                       <div className="text-xs text-gray-500 mt-2">
                         Crop: {sample.crop}
-                        {sample.yield_goal && ` • Yield Goal: ${sample.yield_goal} bu/ac`}
+                        {sample.yield_goal && ` • Yield Goal: ${sample.yield_goal} units/ac`}
                         {sample.program_level && ` • ${sample.program_level} Program`}
                         {sample.organic && ' • Organic'}
                       </div>
